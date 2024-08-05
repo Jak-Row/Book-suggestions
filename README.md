@@ -1,2 +1,2 @@
-# Book-suggestions
+# Bookmarket
 app to suggest books
