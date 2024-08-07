@@ -1,9 +1,14 @@
 /* Basic styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Times New Roman', Times, serif, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #040932;
+}
+
+img {
+    width: 200px;
+    height:  auto;
 }
 
 .container {
