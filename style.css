@@ -3,18 +3,18 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #040932;
 }
 
 .container {
-    width: 80%;
+    width: 10%;
     margin: 0 auto;
     padding: 20px;
 }
 
 /* Header styles */
 header {
-    background-color: #333;
+    background-color: #040932;
     color: #fff;
     padding: 10px 0;
     text-align: center;
@@ -54,19 +54,24 @@ header h1 {
 
 /* Book list styles */
 .book-list {
-    list-style: none;
-    padding: 0;
+    list-style: list-style-img;
+    padding: 5;
 }
 
 .book-item {
-    background-color: #040b46;
+    background-color: #040932;
     margin: 10px 0;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    display: flex;
+    padding: 5px;
+    border: 1px solid #040932;
+    border-radius: 2px;
+    display: normal;
     justify-content: space-between;
     align-items: center;
+}
+
+img {
+    width: 10%;
+    height: auto;
 }
 
 .book-item h2 {
@@ -76,7 +81,7 @@ header h1 {
 
 .book-item p {
     margin: 5px 0 0;
-    color: #666;
+    color: #040932;
 }
 
 /* Responsive design */
