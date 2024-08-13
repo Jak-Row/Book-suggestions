@@ -1,22 +1,82 @@
+// Base Library array
 const library = [{
-    image: "https://m.media-amazon.com/images/I/81q77Q39nEL._AC_UF1000,1000_QL80_.jpg",
-    title: "The Sourcerer's Stone",
+    image: "https://m.media-amazon.com/images/I/91NjWLufnNL._SY342_.jpg",
+    title: "Harry Potter and The Sourcerer's Stone",
     series: "Harry Potter",
     genre: "Fantasy",
     book: 1
 },
 {
     image: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR9SarI05alr1Ejq3_ux7s5naSm5awx6Tu8IwFYIgIu1IcNCnK-",
-    title: "The Sourcerer's Stone",
+    title: "Harry Potter and The Chamber of Secrets",
     series: "Harry Potter",
     genre: "Fantasy",
     book: 2 
+},
+{
+    image: "https://m.media-amazon.com/images/I/812CcFkEPCL._SY466_.jpg",
+    title: "Harry Potter and The Prisoner of Azkaban",
+    series: "Harry Potter",
+    genre: "Fantasy",
+    book: 3 
+},
+{
+    image: "https://m.media-amazon.com/images/I/91SI2owt1XL._SY342_.jpg",
+    title: "Harry Potter and The Goblet of Fire",
+    series: "Harry Potter",
+    genre: "Fantasy",
+    book: 4 
+},
+{
+    image: "https://m.media-amazon.com/images/I/91TzeItvNFL._SY342_.jpg",
+    title: "Harry Potter and The Order of the Phoenix",
+    series: "Harry Potter",
+    genre: "Fantasy",
+    book: 5 
+},
+{
+    image: "https://m.media-amazon.com/images/I/91g0m3EGvpL._SY342_.jpg",
+    title: "Harry Potter and the Half-Blood Prince",
+    series: "Harry Potter",
+    genre: "Fantasy",
+    book: 6 
+},
+{
+    image: "https://m.media-amazon.com/images/I/71Q1Iu4suSL._AC_SY679_.jpg",
+    title: "Harry Potter and the Deathly Hallows",
+    series: "Harry Potter",
+    genre: "Fantasy",
+    book: 7 
+},
+{
+    image: "https://m.media-amazon.com/images/I/81L6YpcUoZL._SY466_.jpg",
+    title: "Steelheart",
+    series: "Reckoners",
+    genre: "Sci-Fi",
+    book: 8 
+},
+{
+    image: "https://m.media-amazon.com/images/I/51MTNFeoHdL._SY445_SX342_.jpg",
+    title: "Firefight",
+    series: "Reckoners",
+    genre: "Sci-Fi",
+    book: 9 
+},
+{
+    image: "https://m.media-amazon.com/images/I/51P-Tx0626L._SY445_SX342_.jpg",
+    title: "Calamity",
+    series: "Reckoners",
+    genre: "Sci-Fi",
+    book: 10 
 }];
-const addBook = document.querySelector('#newBook');
-const titleEl = document.getElementById("title");
-const seriesEl = document.getElementById("series");
-const genreEl = document.getElementById("genre");
 
+
+//element callers
+const addBook = document.querySelector('#newBook');
+const subBook = document.querySelector('#removeBook');
+
+
+//Functions
 const addNewBook = function(image, title, series, genre) {
     const newBook = {
         image: image,
@@ -29,11 +89,21 @@ const addNewBook = function(image, title, series, genre) {
     library.push(newBook)
 }
 
+const removeBook = function(num) {
+    library.splice(num - 1, 1);
+
+    for(i = 0; i < library.length; i++) {
+        library[i].book = i + 1;
+    }
+}
 
 const displayBooks = function() {
 
     for(i = 0; i < library.length; i++) {
-        const container = document.querySelector(".book-item");
+        const list = document.querySelector('.book-list')
+        const container = document.createElement('section');
+        container.className = "book-item";
+        container.setAttribute("id", `book${i}`);
         const item0 = document.createElement('img');
         const item1 = document.createElement('h2');
         const item2 = document.createElement('h2');
@@ -46,6 +116,7 @@ const displayBooks = function() {
         item3.textContent = `Genre: ${library[i].genre}`;
         item4.textContent = `Book Number: ${library[i].book}`;
 
+        list.appendChild(container);
         container.appendChild(item0);
         container.appendChild(item1);
         container.appendChild(item2);
@@ -55,8 +126,21 @@ const displayBooks = function() {
     
 }
 
+
+const redisplayBooks = function(oldLength) {
+    for(i = 0; i < oldLength; i++) {
+        const child = document.getElementById(`book${i}`);
+        child.remove();
+    }
+
+    displayBooks();
+}
+
+
 displayBooks();
 
+
+//  Event Listeners
 addBook.addEventListener('click', function () {
     const titleEl = document.getElementById("title").value;
     const seriesEl = document.getElementById("series").value;
@@ -66,4 +150,16 @@ addBook.addEventListener('click', function () {
     addNewBook(imageEl, titleEl, seriesEl, genreEl);
 
     console.log(library);
+
+    redisplayBooks(library.length - 1);
+})
+
+subBook.addEventListener('click', function () {
+    const bookNum = document.getElementById("remove").value;
+
+    removeBook(bookNum);
+
+    console.log(library);
+
+    redisplayBooks(library.length + 1);
 })
