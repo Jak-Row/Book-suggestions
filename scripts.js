@@ -1,21 +1,165 @@
-const body = document.body;
-const container = document.querySelector(".book-item");
-const item1 = document.createElement('section');
-const item2 = document.createElement('section');
-const item3 = document.createElement('section');
-
-const book = {
-    name: "The Sourcerer's Stone",
+// Base Library array
+const library = [{
+    image: "https://m.media-amazon.com/images/I/91NjWLufnNL._SY342_.jpg",
+    title: "Harry Potter and The Sourcerer's Stone",
     series: "Harry Potter",
-    genre: "Fantasy"
+    genre: "Fantasy",
+    book: 1
+},
+{
+    image: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR9SarI05alr1Ejq3_ux7s5naSm5awx6Tu8IwFYIgIu1IcNCnK-",
+    title: "Harry Potter and The Chamber of Secrets",
+    series: "Harry Potter",
+    genre: "Fantasy",
+    book: 2 
+},
+{
+    image: "https://m.media-amazon.com/images/I/812CcFkEPCL._SY466_.jpg",
+    title: "Harry Potter and The Prisoner of Azkaban",
+    series: "Harry Potter",
+    genre: "Fantasy",
+    book: 3 
+},
+{
+    image: "https://m.media-amazon.com/images/I/91SI2owt1XL._SY342_.jpg",
+    title: "Harry Potter and The Goblet of Fire",
+    series: "Harry Potter",
+    genre: "Fantasy",
+    book: 4 
+},
+{
+    image: "https://m.media-amazon.com/images/I/91TzeItvNFL._SY342_.jpg",
+    title: "Harry Potter and The Order of the Phoenix",
+    series: "Harry Potter",
+    genre: "Fantasy",
+    book: 5 
+},
+{
+    image: "https://m.media-amazon.com/images/I/91g0m3EGvpL._SY342_.jpg",
+    title: "Harry Potter and the Half-Blood Prince",
+    series: "Harry Potter",
+    genre: "Fantasy",
+    book: 6 
+},
+{
+    image: "https://m.media-amazon.com/images/I/71Q1Iu4suSL._AC_SY679_.jpg",
+    title: "Harry Potter and the Deathly Hallows",
+    series: "Harry Potter",
+    genre: "Fantasy",
+    book: 7 
+},
+{
+    image: "https://m.media-amazon.com/images/I/81L6YpcUoZL._SY466_.jpg",
+    title: "Steelheart",
+    series: "Reckoners",
+    genre: "Sci-Fi",
+    book: 8 
+},
+{
+    image: "https://m.media-amazon.com/images/I/51MTNFeoHdL._SY445_SX342_.jpg",
+    title: "Firefight",
+    series: "Reckoners",
+    genre: "Sci-Fi",
+    book: 9 
+},
+{
+    image: "https://m.media-amazon.com/images/I/51P-Tx0626L._SY445_SX342_.jpg",
+    title: "Calamity",
+    series: "Reckoners",
+    genre: "Sci-Fi",
+    book: 10 
+}];
+
+
+//element callers
+const addBook = document.querySelector('#newBook');
+const subBook = document.querySelector('#removeBook');
+
+
+//Functions
+const addNewBook = function(image, title, series, genre) {
+    const newBook = {
+        image: image,
+        title: title,
+        series: series,
+        genre: genre,
+        book: (library.length + 1)
+    }
+
+    library.push(newBook)
 }
 
-item1.textContent = `Title: ${book.name}`;
-item2.textContent = `Series: ${book.series}`;
-item3.textContent = `Genre: ${book.genre}`;
+const removeBook = function(num) {
+    library.splice(num - 1, 1);
 
-container.appendChild(item1);
-container.appendChild(item2);
-container.appendChild(item3);
+    for(i = 0; i < library.length; i++) {
+        library[i].book = i + 1;
+    }
+}
 
-console.log("hi");
+const displayBooks = function() {
+
+    for(i = 0; i < library.length; i++) {
+        const list = document.querySelector('.book-list')
+        const container = document.createElement('section');
+        container.className = "book-item";
+        container.setAttribute("id", `book${i}`);
+        const item0 = document.createElement('img');
+        const item1 = document.createElement('h2');
+        const item2 = document.createElement('h2');
+        const item3 = document.createElement('section');
+        const item4 = document.createElement('section');
+
+        item0.src = `${library[i].image}`;
+        item1.textContent = `Title: ${library[i].title}`;
+        item2.textContent = `Series: ${library[i].series}`;
+        item3.textContent = `Genre: ${library[i].genre}`;
+        item4.textContent = `Book Number: ${library[i].book}`;
+
+        list.appendChild(container);
+        container.appendChild(item0);
+        container.appendChild(item1);
+        container.appendChild(item2);
+        container.appendChild(item3);
+        container.appendChild(item4);
+    }
+    
+}
+
+
+const redisplayBooks = function(oldLength) {
+    for(i = 0; i < oldLength; i++) {
+        const child = document.getElementById(`book${i}`);
+        child.remove();
+    }
+
+    displayBooks();
+}
+
+
+displayBooks();
+
+
+//  Event Listeners
+addBook.addEventListener('click', function () {
+    const titleEl = document.getElementById("title").value;
+    const seriesEl = document.getElementById("series").value;
+    const genreEl = document.getElementById("genre").value;
+    const imageEl = document.getElementById("image").value;
+
+    addNewBook(imageEl, titleEl, seriesEl, genreEl);
+
+    console.log(library);
+
+    redisplayBooks(library.length - 1);
+})
+
+subBook.addEventListener('click', function () {
+    const bookNum = document.getElementById("remove").value;
+
+    removeBook(bookNum);
+
+    console.log(library);
+
+    redisplayBooks(library.length + 1);
+})
