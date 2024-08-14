@@ -13,19 +13,15 @@
 <body>
   
   <header>Bookmarket</header>
-  <dev class="container">
-    <p></p>
-  </dev>
 
   <section class="search-bar" style="position: absolute; top: 0; right: 0;">
     <input type="text" placeholder="Search...">
     <button type="submit">Search</button>
   </section>
 
-  <section class="book-item">
-    <p>Test</p>
-    <img src="https://m.media-amazon.com/images/I/81q77Q39nEL._AC_UF1000,1000_QL80_.jpg" alt="Neeeeerd">
-  </section>
+  <div class="book-list">
+
+  </div>
 
   <footer>
     <button id="newBook">Add Book</button>
@@ -43,6 +39,7 @@
         <select id="genre">
           <option value="Poetry">Poetry</option>
           <option value="Non-Fiction">Non-Fiction</option>
+          <option value="Fiction">Fiction</option>
           <option value="Fantasy">Fantasy</option>
           <option value="Sci-Fi">Sci-Fi</option>
         </select>
@@ -52,14 +49,10 @@
         <input type="text" name="image" id="image">
       </li>
     </ul>
-    
-    
-    
-
+    <button id="removeBook">Remove Book</button>
+    <label for="remove">The Number of the Book you want to remove</label>
+    <input type="number" name="remove" id="remove">
   </footer>
-  <section class="search-bar" style="position: absolute; top: 0; right: 0;">
-    <input type="text" placeholder="Search...">
-    <button type="submit">Search</button>
-  </section>
+
 </body>
 </html>
