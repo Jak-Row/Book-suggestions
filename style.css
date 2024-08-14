@@ -4,6 +4,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #040932;
+    color: #fff;
 }
 
 img {
@@ -23,7 +24,7 @@ header {
     color: #81b8f0;
     padding: 10px 0;
     text-align: center;
-    font-size: 8.5em;
+    font-size: 8em;
     font-family: 'Papyrus', cursive;
     text-shadow: 2px 2px 4px #7c80f5;
 }
@@ -46,8 +47,8 @@ header h1::before {
 }
 
 .search-bar input[type="text"] {
-    width: 70%;
-    padding: 10px;
+    width: 60%;
+    padding: 20px;
     border: 1px solid #ccc;
     border-radius: 4px 0 0 4px;
     outline: none;
@@ -100,22 +101,32 @@ img {
 }
 
 /* Responsive design */
-@media (max-width: 600px) {
-    .container {
-        width: 100%;
-        padding: 10px;
+@media (max-width: 768px) {
+    header {
+        font-size: 3em;
     }
 
     .search-bar input[type="text"] {
-        width: 60%;
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        font-size: 2em;
     }
 
-    .book-item {
-        flex-direction: column;
-        align-items: flex-start;
+    .search-bar input[type="text"] {
+        width: 100%;
     }
 
-    .book-item h2 {
-        font-size: 1em;
+    .search-bar button {
+        width: 100%;
+        border-radius: 4px;
+        margin-top: 10px;
+    }
+
+    .container {
+        padding: 10px;
     }
 }
