@@ -68,7 +68,78 @@ const library = [{
     series: "Reckoners",
     genre: "Sci-Fi",
     book: 10 
-}];
+},
+{
+    image: "https://m.media-amazon.com/images/I/71JNgcyHqML._SY466_.jpg",
+    title: "Women",
+    series: "None",
+    genre: "Fiction",
+    book: 11
+},
+{
+    image: "https://m.media-amazon.com/images/I/41BiT3sOQBL._SY445_SX342_.jpg",
+    title: "The Great Gatsby",
+    series: "None",
+    genre: "Fiction",
+    book: 12
+},
+{
+    image: "https://m.media-amazon.com/images/I/61rYS7JQMPL._SL1200_.jpg",
+    title: "On The Road",
+    series: "None",
+    genre: "Fiction",
+    book: 13
+},
+{
+    image: "https://m.media-amazon.com/images/I/51ZplLxPmZL._SY445_SX342_.jpg",
+    title: "Volume 1: Inferno",
+    series: "The Devine Comedy",
+    genre: "Fiction",
+    book: 14
+},
+{
+    image: "https://m.media-amazon.com/images/I/510JpWTRCKL._SY445_SX342_.jpg",
+    title: "Volume 2: Purgatory",
+    series: "The Devine Comedy",
+    genre: "Fiction",
+    book: 15
+},
+{
+    image: "https://m.media-amazon.com/images/I/4173+NEFwWL._SY445_SX342_.jpg",
+    title: "Into The Wild",
+    series: "None",
+    genre: "Non-Fiction",
+    book: 16
+},
+{
+    image: "https://m.media-amazon.com/images/I/41BHgzbKbqL._SY445_SX342_.jpg",
+    title: "The Pianist",
+    series: "None",
+    genre: "Autobiography",
+    book: 17
+},
+{
+    image: "https://m.media-amazon.com/images/I/41O8FJfHwHL._SY445_SX342_.jpg",
+    title: "A Room of One's Own",
+    series: "None",
+    genre: "Fiction",
+    book: 18
+},
+{
+    image: "https://m.media-amazon.com/images/I/91+vj2qNsdL._AC_UY218_.jpg",
+    title: "The Complete Tales and Poems of Edgar Allan Poe",
+    series: "None",
+    genre: "Poetry",
+    book: 19
+},
+{
+    image: "https://m.media-amazon.com/images/I/31imE8tU6AL._SY445_SX342_.jpg",
+    title: "The Jungle",
+    series: "None",
+    genre: "Fiction",
+    book: 20
+},
+];
 
 
 //element callers
