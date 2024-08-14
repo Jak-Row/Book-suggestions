@@ -5,38 +5,37 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="./style.css" />
-  <title>Objects</title>
+  <title>Bookmarket</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="scripts.js" defer></script>
+  
 </head>
 
 <body>
-  
-  <header>Bookmarket</header>
+  <header class="text-blue-500 text-center py-4 font-papyrus">Bookmarket</header>
 
-  <section class="search-bar" style="position: absolute; top: 0; right: 0;">
-    <input type="text" placeholder="Search...">
-    <button type="submit">Search</button>
+  <section class="search-bar flex flex-col md:flex-row absolute top-0 right-0 space-y-2 md:space-y-0 md:space-x-2 p-4">
+    <input type="text" placeholder="Search..." class="border p-2 w-full md:w-auto">
+    <button type="submit" class="bg-blue-500 text-white p-2 w-full md:w-auto">Search</button>
   </section>
 
-  <div class="book-list">
-
+  <div class="book-list container p-4 md:p-14 lg:p-16 xl:p-20">
   </div>
 
-  <footer>
-    <button id="newBook">Add Book</button>
-    <ul>
+  <footer class="p-4">
+    <button id="newBook" class="bg-blue-400 text-white p-2 w-half md:w-auto">Add Book</button>
+    <ul class="space-y-4 mt-4">
       <li>
-        <label for="title">Book Title</label>
-        <input type="text" name="title" id="title">    
+        <label for="title" class="block">Book Title</label>
+        <input type="text" name="title" id="title" class="border p-2 w-half md:w-half text-black">    
       </li>
       <li>
-        <label for="series">Is it part of a series?</label>
-        <input type="text" name="series" id="series">
+        <label for="series" class="block">Is it part of a series?</label>
+        <input type="text" name="series" id="series" class="border p-2 w-half md:w-half text-black">
       </li>
       <li>
-        <label for="genre">What genre is it</label>
-        <select id="genre">
+        <label for="genre" class="block">What genre is it</label>
+        <select id="genre" class="border p-2 w-half md:w-half text-black">
           <option value="Poetry">Poetry</option>
           <option value="Non-Fiction">Non-Fiction</option>
           <option value="Fiction">Fiction</option>
@@ -45,13 +44,13 @@
         </select>
       </li>
       <li>
-        <label for="image">Image Address</label>
-        <input type="text" name="image" id="image">
+        <label for="image" class="block">Image Address</label>
+        <input type="text" name="image" id="image" class="border p-2 w-half md:w-half text-black">
       </li>
     </ul>
-    <button id="removeBook">Remove Book</button>
-    <label for="remove">The Number of the Book you want to remove</label>
-    <input type="number" name="remove" id="remove">
+    <button id="removeBook" class="bg-blue-700 text-white p-2 mt-4 w-half md:w-auto">Remove Book</button>
+    <label for="remove" class="block mt-4">The Number of the Book you want to remove</label>
+    <input type="number" name="remove" id="remove" class="border p-2 w-half text-black">
   </footer>
 
 </body>
