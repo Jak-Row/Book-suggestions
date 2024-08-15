@@ -12,7 +12,7 @@ Add/Remove Books:  At the bottom of the page the user can find an option to add 
 
 * JS:  
 
-Library Array:  An array of book objects with a preset of 30 books already added for the user.  The array is automatically adjusted when a book is added or removed. 
+Library Array:  An array of book objects with a preset of 20 books already added for the user.  The array is automatically adjusted when a book is added or removed. 
 
 Display function:  A function that takes every object in the Library array and creates individual elements for them in the HTML for them to be displayed.  
 
