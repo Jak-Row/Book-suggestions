@@ -20,6 +20,6 @@ Display function:  A function that takes every object in the Library array and c
 
 Responsive Design:  The page will change the size of the book elements being displayed to better fit the size of the screen.
 
-## Links
+## Link
 
 [Bookmarket](http://127.0.0.1:5501/index.html)
