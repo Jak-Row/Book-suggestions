@@ -148,6 +148,23 @@ const subBook = document.querySelector('#removeBook');
 
 
 //Functions
+function searchForBook() {
+    var input, filter, ul, li, a, i;
+    input = document.getElementById("search");
+    filter = input.value.toUpperCase();
+    ul = document.querySelector('.book-list');
+    li = ul.getElementsByClassName("book-item");
+    for (i = 0; i < li.length; i++) {
+      a = li[i].getElementsByTagName("h2")[0];
+      if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        li[i].style.display = "";
+      } else {
+        li[i].style.display = "none";
+      }
+    }
+}
+
+
 const addNewBook = function(image, title, series, genre) {
     const newBook = {
         image: image,
